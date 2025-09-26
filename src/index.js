@@ -6,13 +6,11 @@ dotenv.config({ path: "./env" });
 
 connectDB()
   .then(() => {
-    if (!process.env.VERCEL) {
-      const PORT = process.env.PORT || 8000;
-      app.listen(PORT, () => {
-        console.log(`Listening on port ${PORT}`);
-      });
     
-    }  })
+    app.listen(process.env.PORT, () => {
+      console.log(`listning on the port ${process.env.PORT || 8000}`);
+    });
+    }  )
   .catch((error) => {
     console.log("Mongo_Db connection failed", error);
   });
