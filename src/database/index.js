@@ -9,7 +9,7 @@ const connectDB = async () => {
       throw new Error("MONGO_URI is not defined in .env file");
     }
 
-    const connectionInstance = await mongoose.connect(process.env.MONGO_URI, {
+    const connectionInstance = await mongoose.connect(process.env.MONGO_DB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       serverSelectionTimeoutMS: 30000, // wait 30s before timeout
