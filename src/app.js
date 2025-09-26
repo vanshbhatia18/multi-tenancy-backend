@@ -19,5 +19,5 @@ app.use((err, req, res, next) => {
 });
 app.use("/api/v1/users", authRouter);
 app.use("/api/v1/notes",noteRouter)
-export {app}
+export default app
 
